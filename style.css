@@ -1,0 +1,65 @@
+/* Umumiy sozlamalar */
+* {
+    box-sizing: border-box; /* Padding va Border kenglikka ta'sir qilmaydi */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+/* Konteynerlar uchun Box Model */
+.box-container {
+    background-color: #333;
+    color: white;
+    padding: 20px;       /* Ichki masofa */
+    margin-bottom: 10px; /* Tashqi masofa */
+    text-align: center;
+}
+
+.main-wrapper {
+    display: flex;
+    max-width: 1000px;
+    margin: 20px auto;   /* Markazga joylashtirish */
+    gap: 20px;           /* Elementlar orasidagi masofa */
+}
+
+/* Yangilik kartalari */
+.news-card {
+    background: white;
+    padding: 25px;       /* Content va Border orasidagi masofa */
+    margin-bottom: 20px; /* Kartalar orasidagi masofa */
+    border: 1px solid #ddd; /* Border - Chegara */
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.news-card h2 {
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.news-card button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Yon panel (Sidebar) */
+.sidebar {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-left: 5px solid #007bff; /* Faqat chap tomondagi border */
+    height: fit-content;
+}
+
+.content-area {
+    flex: 3;
+}

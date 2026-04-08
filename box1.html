@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Insight | Mustaqil Media</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-main: #1a1a1a;
+            --accent: #2563eb;
+            --glass: rgba(255, 255, 255, 0.7);
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+        }
+
+        /* Navigatsiya - Minimalist va havodor */
+        .navbar {
+            padding: 1.5rem 0;
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-main) !important;
+            margin-left: 2rem;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0; height: 2px;
+            bottom: -5px; left: 0;
+            background: var(--accent);
+            transition: 0.3s;
+        }
+
+        .nav-link:hover::after { width: 100%; }
+
+        /* Featured News - Saytning markazi */
+        .featured-card {
+            background: #000;
+            color: white;
+            border-radius: 32px;
+            overflow: hidden;
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            align-items: flex-end;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border: none;
+        }
+
+        .featured-img {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            transition: 0.6s;
+        }
+
+        .featured-card:hover .featured-img { transform: scale(1.03); opacity: 0.5; }
+
+        .featured-content { position: relative; z-index: 2; max-width: 700px; }
+
+        /* Kichik Kartochkalar - Brutalism va Minimalizm uyg'unligi */
+        .standard-card {
+            border: none;
+            background: transparent;
+            margin-bottom: 2rem;
+            transition: 0.3s;
+        }
+
+        .img-wrapper {
+            border-radius: 24px;
+            overflow: hidden;
+            margin-bottom: 1.2rem;
+        }
+
+        .standard-card img {
+            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .standard-card:hover img { transform: scale(1.1); }
+
+        .card-category {
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .card-title {
+            font-weight: 700;
+            line-height: 1.3;
+            font-size: 1.25rem;
+        }
+
+        /* Obuna bo'lish boxi - Organik shakllar */
+        .subscribe-box {
+            background: #f1f5f9;
+            border-radius: 40px;
+            padding: 4rem;
+            text-align: center;
+            margin: 5rem 0;
+        }
+
+        .btn-dark-custom {
+            background: #000;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 100px;
+            border: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-dark-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-800 fs-4" href="#" style="letter-spacing: -1px;">
+                INSIGHT<span style="color: var(--accent);">.</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#">Siyosat</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Madaniyat</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Texnologiya</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+        
+        <div class="card featured-card shadow-lg">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200" class="featured-img" alt="Hero">
+            <div class="featured-content">
+                <span class="badge bg-primary mb-3 p-2 px-3" style="border-radius: 8px;">HAFTALIK TAHLIL</span>
+                <h1 class="display-4 fw-800 mb-4">Koinotning chegarasigacha....</h1>
+                <p class="lead mb-4 opacity-75">Bugungi kunda texnologiyalar faqat vosita emas, balki bizning ijodiy hamkorimizga aylanmoqda. Bu jarayon qanchalik chuqurlashadi?</p>
+                <button class="btn btn-light btn-lg px-4 fw-bold" style="border-radius: 100px;">Maqolani o'qish</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="standard-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=500" class="w-100" alt="tech">
+                    </div>
+                    <span class="card-category text-primary">Texnologiya</span>
+                    <h3 class="card-title">Retro-gadjetlar nima uchun yana urfga kirmoqda?</h3>
+                    <p class="text-muted mt-2">Nostalgiya kuchi: nima uchun yosh avlod kassetali pleyerlarni tanlamoqda...</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="standard-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=500" class="w-100" alt="code">
+                    </div>
+                    <span class="card-category text-success">Dasturlash</span>
+                    <h3 class="card-title">Clean Code: Kodni qanday qilib san'at darajasiga chiqarish mumkin?</h3>
+                    <p class="text-muted mt-2">Junior va Senior orasidagi farq faqat tajribada emas, balki yondashuvda.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="standard-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500" class="w-100" alt="office">
+                    </div>
+                    <span class="card-category text-warning">Karyera</span>
+                    <h3 class="card-title">Masofaviy ishning psixologik ta'sirlari</h3>
+                    <p class="text-muted mt-2">Uyda ishlash unumdorlikni oshiradimi yoki insonni jamiyatdan uzib qo'yadimi?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="subscribe-box">
+            <h2 class="fw-800 mb-3">Eng sara maqolalar elektron pochtangizga</h2>
+            <p class="text-muted mb-4">Hech qanday reklamasiz, faqat sifatli kontent.</p>
+            <div class="d-flex justify-content-center">
+                <div class="input-group mb-3 w-75" style="max-width: 500px;">
+                    <input type="text" class="form-control border-0 p-3 px-4 shadow-sm" placeholder="Email manzilingiz" style="border-radius: 100px 0 0 100px;">
+                    <button class="btn btn-dark-custom" type="button" style="border-radius: 0 100px 100px 0;">Yuborish</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-5 border-top">
+        <div class="container text-center">
+            <p class="text-muted mb-0">© 2026 <strong>Insight Media</strong>. Toshkent, O'zbekiston. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

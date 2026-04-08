@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<title>Sign Up</title>
+</head>
+<body>
+
+<div class="container">
+<div class="form-box">
+
+<div style="text-align:right; margin-bottom:15px;">
+<select id="language" onchange="changeLanguage()">
+<option value="en">English</option>
+<option value="kr">한국어</option>
+<option value="ru">Русский</option>
+<option value="uz">O'zbek</option>
+</select>
+</div>
+
+<h2 id="title">Sign Up</h2>
+
+<form enctype="multipart/form-data">
+
+<div class="input-group">
+<label id="nameLabel">Full Name</label>
+<input type="text" id="nameInput" required>
+</div>
+
+<div class="input-group">
+<label id="genderLabel">Gender</label>
+<select required>
+<option value="" id="selectGender">Select Gender</option>
+<option id="male">Male</option>
+<option id="female">Female</option>
+<option id="other">Other</option>
+</select>
+</div>
+
+<div class="input-group">
+<label id="birthLabel">Date of Birth</label>
+<input type="date" required>
+</div>
+
+<div class="input-group">
+<label id="phoneLabel">Phone Number</label>
+<input type="tel" id="phoneInput" required>
+</div>
+
+<div class="input-group">
+<label id="emailLabel">Email</label>
+<input type="email" id="emailInput" required>
+</div>
+
+<div class="input-group">
+<label id="passwordLabel">Password</label>
+<input type="password" id="passwordInput" required>
+</div>
+
+<div class="input-group">
+<label id="confirmLabel">Confirm Password</label>
+<input type="password" id="confirmInput" required>
+</div>
+
+<div class="input-group">
+<label id="imageLabel">Upload Profile Image</label>
+<input type="file" accept="image/*" required>
+</div>
+
+<button type="submit" class="btn" id="buttonText">
+Create Account
+</button>
+
+</form>
+
+<div class="link-text">
+<span id="haveAccount">Already have an account?</span>
+<a href="login.html" id="loginText">Login</a>
+</div>
+
+</div>
+</div>
+
+<script>
+
+const translations = {
+
+en:{
+title:"Sign Up",
+name:"Full Name",
+gender:"Gender",
+selectGender:"Select Gender",
+male:"Male",
+female:"Female",
+other:"Other",
+birth:"Date of Birth",
+phone:"Phone Number",
+email:"Email",
+password:"Password",
+confirm:"Confirm Password",
+image:"Upload Profile Image",
+button:"Create Account",
+have:"Already have an account?",
+login:"Login",
+
+placeName:"Enter your full name",
+placePhone:"+998901234567",
+placeEmail:"example@gmail.com",
+placePassword:"At least 8 characters",
+placeConfirm:"Confirm your password"
+},
+
+kr:{
+title:"회원가입",
+name:"이름",
+gender:"성별",
+selectGender:"성별 선택",
+male:"남성",
+female:"여성",
+other:"기타",
+birth:"생년월일",
+phone:"전화번호",
+email:"이메일",
+password:"비밀번호",
+confirm:"비밀번호 확인",
+image:"프로필 사진 업로드",
+button:"계정 만들기",
+have:"이미 계정이 있으신가요?",
+login:"로그인",
+
+placeName:"이름을 입력하세요",
+placePhone:"01012345678",
+placeEmail:"example@gmail.com",
+placePassword:"8자 이상 입력",
+placeConfirm:"비밀번호 확인"
+},
+
+ru:{
+title:"Регистрация",
+name:"Полное имя",
+gender:"Пол",
+selectGender:"Выберите пол",
+male:"Мужской",
+female:"Женский",
+other:"Другой",
+birth:"Дата рождения",
+phone:"Номер телефона",
+email:"Электронная почта",
+password:"Пароль",
+confirm:"Подтвердите пароль",
+image:"Загрузить фото профиля",
+button:"Создать аккаунт",
+have:"Уже есть аккаунт?",
+login:"Войти",
+
+placeName:"Введите полное имя",
+placePhone:"+79991234567",
+placeEmail:"example@gmail.com",
+placePassword:"Минимум 8 символов",
+placeConfirm:"Подтвердите пароль"
+},
+
+uz:{
+title:"Ro'yxatdan o'tish",
+name:"To'liq ism",
+gender:"Jins",
+selectGender:"Jinsni tanlang",
+male:"Erkak",
+female:"Ayol",
+other:"Boshqa",
+birth:"Tug'ilgan sana",
+phone:"Telefon raqami",
+email:"Email",
+password:"Parol",
+confirm:"Parolni tasdiqlang",
+image:"Profil rasmi yuklash",
+button:"Hisob yaratish",
+have:"Hisobingiz bormi?",
+login:"Kirish",
+
+placeName:"Ismingizni kiriting",
+placePhone:"+998901234567",
+placeEmail:"example@gmail.com",
+placePassword:"Kamida 8 ta belgi",
+placeConfirm:"Parolni qayta kiriting"
+}
+
+};
+
+function changeLanguage(){
+const lang = document.getElementById("language").value;
+
+document.getElementById("title").innerText = translations[lang].title;
+document.getElementById("nameLabel").innerText = translations[lang].name;
+document.getElementById("genderLabel").innerText = translations[lang].gender;
+document.getElementById("selectGender").innerText = translations[lang].selectGender;
+document.getElementById("male").innerText = translations[lang].male;
+document.getElementById("female").innerText = translations[lang].female;
+document.getElementById("other").innerText = translations[lang].other;
+document.getElementById("birthLabel").innerText = translations[lang].birth;
+document.getElementById("phoneLabel").innerText = translations[lang].phone;
+document.getElementById("emailLabel").innerText = translations[lang].email;
+document.getElementById("passwordLabel").innerText = translations[lang].password;
+document.getElementById("confirmLabel").innerText = translations[lang].confirm;
+document.getElementById("imageLabel").innerText = translations[lang].image;
+document.getElementById("buttonText").innerText = translations[lang].button;
+document.getElementById("haveAccount").innerText = translations[lang].have;
+document.getElementById("loginText").innerText = translations[lang].login;
+
+/* PLACEHOLDERS */
+document.getElementById("nameInput").placeholder = translations[lang].placeName;
+document.getElementById("phoneInput").placeholder = translations[lang].placePhone;
+document.getElementById("emailInput").placeholder = translations[lang].placeEmail;
+document.getElementById("passwordInput").placeholder = translations[lang].placePassword;
+document.getElementById("confirmInput").placeholder = translations[lang].placeConfirm;
+}
+
+changeLanguage(); // default load
+
+</script>
+
+</body>
+</html>
